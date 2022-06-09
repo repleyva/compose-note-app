@@ -1,4 +1,4 @@
-package repleyva.dev.composenote.ui.theme
+package repleyva.dev.composenote.feature_note.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

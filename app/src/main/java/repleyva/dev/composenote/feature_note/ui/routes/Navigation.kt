@@ -1,10 +1,10 @@
-package repleyva.dev.composenote.ui.routes
+package repleyva.dev.composenote.feature_note.ui.routes
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import repleyva.dev.composenote.ui.flow.notes_list.NoteListScreen
+import repleyva.dev.composenote.feature_note.ui.flow.notes_list.NoteListScreen
 
 @Composable
 fun Navigation() {
