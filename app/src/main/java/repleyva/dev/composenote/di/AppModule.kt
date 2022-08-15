@@ -9,10 +9,7 @@ import dagger.hilt.components.SingletonComponent
 import repleyva.dev.composenote.feature_note.data.datasource.NoteDatabase
 import repleyva.dev.composenote.feature_note.data.repository.NoteRepositoryImpl
 import repleyva.dev.composenote.feature_note.domain.repository.NoteRepository
-import repleyva.dev.composenote.feature_note.domain.use_case.CreateNote
-import repleyva.dev.composenote.feature_note.domain.use_case.DeleteNoteUseCase
-import repleyva.dev.composenote.feature_note.domain.use_case.GetNotesUseCase
-import repleyva.dev.composenote.feature_note.domain.use_case.NoteUseCases
+import repleyva.dev.composenote.feature_note.domain.use_case.*
 import javax.inject.Singleton
 
 @Module
@@ -38,6 +35,7 @@ object AppModule {
         NoteUseCases(
             getNotes = GetNotesUseCase(repository),
             deleteNote = DeleteNoteUseCase(repository),
-            createNote = CreateNote(repository)
+            createNote = CreateNote(repository),
+            getNote = GetNote(repository)
         )
 }
