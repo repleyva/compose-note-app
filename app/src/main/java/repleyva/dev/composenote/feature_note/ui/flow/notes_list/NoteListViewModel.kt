@@ -89,8 +89,7 @@ class NoteListViewModel @Inject constructor(
                     notes = notes,
                     noteOrder = noteOrder
                 )
-            }
-            .launchIn(viewModelScope)
+            }.launchIn(viewModelScope)
     }
 
     /**
