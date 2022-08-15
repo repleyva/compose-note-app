@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Compose Note</string>
+    <string name="copy_title_filter">Title</string>
+    <string name="copy_date_filter">Date</string>
+    <string name="copy_color_filter">Color</string>
+    <string name="copy_ascending_filter">Ascending</string>
+    <string name="copy_descending_filter">Descending</string>
 </resources>
