@@ -18,10 +18,12 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import kotlinx.coroutines.launch
 import repleyva.dev.composenote.feature_note.ui.flow.notes_list.components.NoteItem
 import repleyva.dev.composenote.feature_note.ui.flow.notes_list.components.OrderSection
+import repleyva.dev.composenote.feature_note.ui.routes.Screen
 
 @Composable
 fun NoteListScreen(
-    viewModel: NoteListViewModel = hiltViewModel()
+    viewModel: NoteListViewModel = hiltViewModel(),
+    onCreateNote: (String) -> Unit
 ) {
     val state = viewModel.state.value
     val scaffoldState = rememberScaffoldState()
@@ -30,7 +32,7 @@ fun NoteListScreen(
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /*TODO*/ },
+                onClick = { onCreateNote(Screen.ToNoteCreateScreen.route) },
                 backgroundColor = MaterialTheme.colors.primary
             ) {
                 Icon(imageVector = Icons.Default.Add, contentDescription = "Create note")
@@ -79,7 +81,7 @@ fun NoteListScreen(
                         note = note,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .clickable { },
+                            .clickable { onCreateNote(Screen.ToNoteCreateScreen.route + "?noteId=${note.id}&noteColor=${note.color}") },
                         onDeleteClick = {
                             viewModel.onEvent(NotesEvent.DeleteNote(note))
                             scope.launch {

@@ -19,7 +19,7 @@ import javax.inject.Inject
 @HiltViewModel
 class CreateNoteViewModel @Inject constructor(
     private val noteUseCases: NoteUseCases,
-    private val savedStateHandle: SavedStateHandle
+    savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
     /**
